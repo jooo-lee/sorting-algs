@@ -1,4 +1,4 @@
-function selectionSort(nums) {
+function selectionSort(arr) {
     /* 
     Let first element of our unsorted array be the smallest element
     Iterate through the unsorted array and compare with each element to find the actual smallest number
@@ -8,21 +8,21 @@ function selectionSort(nums) {
     */
 
     // Iterate through array
-    for (let i = 0; i < nums.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
         // Let current element be smallest element
         let currMin = i;
         // Find actual smallest element in the rest of the unsorted array
-        for (let j = i + 1; j < nums.length; j++) {
-            if (nums[j] < nums[currMin]) {
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[j] < arr[currMin]) {
                 currMin = j;
             }
         }
         // Swap elements if we found an element smaller than our original smallest element
         if (currMin != i) {
-            let tmp = nums[i];
-            nums[i] = nums[currMin];
-            nums[currMin] = tmp;
+            let tmp = arr[i];
+            arr[i] = arr[currMin];
+            arr[currMin] = tmp;
         }
     }
-    return nums;
+    return arr;
 }
